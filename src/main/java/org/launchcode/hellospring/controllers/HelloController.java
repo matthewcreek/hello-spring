@@ -20,8 +20,27 @@ public class HelloController {
     }
     //create a handler that handles requests of the form /hello?name=LaunchCode
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
-    public String helloWithQueryParam(@RequestParam String name) {
-        return "Hello, " + name + "!";
+    public String helloWithQueryParam(@RequestParam String name, @RequestParam String language) {
+        switch (language) {
+            case "english":
+                return "Hello, " + name + "!";
+
+            case "french":
+                return "Bonjour, " + name + "!";
+
+            case "spanish":
+                return "Hola, " + name + "!";
+
+            case "dutch":
+                return "Hallo, " + name + "!";
+
+            case "british":
+                return "OI GUVNA YOO MUST BE " + name.toUpperCase() + " INNIT?!";
+
+            default:
+                return "You broke the switch statement";
+        }
+//        return "Hello, " + name + "!";
     }
     @GetMapping("hello/{name}")
     public String helloPath(@PathVariable String name) {
@@ -46,4 +65,6 @@ public class HelloController {
                 "</body>" +
                 "</html>";
     }
+
+
 }
