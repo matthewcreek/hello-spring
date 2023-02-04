@@ -23,19 +23,39 @@ public class HelloController {
     public String helloWithQueryParam(@RequestParam String name, @RequestParam String language) {
         switch (language) {
             case "english":
-                return "Hello, " + name + "!";
+                return "<html style='background-color:blue'>" +
+                        "<h1 style='color:red'>" +
+                        "Hello, " + name + "!" +
+                        "</h1>" +
+                        "</html>";
 
             case "french":
-                return "Bonjour, " + name + "!";
+                return "<html style='background-color:blue'>" +
+                        "<h1 style='color:white'>" +
+                        "Bonjour, " + name + "!" +
+                        "</h1>" +
+                        "</html>";
 
             case "spanish":
-                return "Hola, " + name + "!";
+                return "<html style='background-color:red'>" +
+                        "<h1 style='color:yellow'>" +
+                        "Hola, " + name + "!" +
+                        "</h1>" +
+                        "</html>";
 
             case "dutch":
-                return "Hallo, " + name + "!";
+                return "<html style='background-color:orange'>" +
+                        "<h1 style='color:blue'>" +
+                        "Hallo, " + name + "!" +
+                        "</h1>" +
+                        "</html>";
 
             case "british":
-                return "OI GUVNA YOO MUST BE " + name.toUpperCase() + " INNIT?!";
+                return "<html style='background-image:url(https://i.kym-cdn.com/entries/icons/medium/000/039/603/cover8.jpg)'>" +
+                        "<h1 style='color:white'>" +
+                        "OI GUVNA YOO MUST BE " + name.toUpperCase() + ", INNIT?!" +
+                        "</h1>" +
+                        "</html>";
 
             default:
                 return "You broke the switch statement";
